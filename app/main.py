@@ -36,3 +36,8 @@ async def send(user_input: UserInput) -> JSONResponse:
         "user_name": user_input.name, 
         "user_reason": user_input.reason
     })
+
+
+@letter_app.get("/health")
+async def healthcheck():
+    return JSONResponse(status_code=200)
